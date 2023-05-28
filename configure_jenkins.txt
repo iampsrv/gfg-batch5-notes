@@ -1,0 +1,17 @@
+1. Connect to http://<your_server_public_DNS>:8080 from your browser.
+2. As prompted, enter the password found in /var/lib/jenkins/secrets/initialAdminPassword.
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+3. Create First Admin User
+4. Install Amazon EC2 plugin
+5. Configure a cloud -> Choose EC2
+6. Add Amazon EC2 Credentials (AWS IAM Access Key used to connect to EC2)
+7. From the Jenkins Credentials Provider, select AWS Credentials as the Kind.
+8. Scroll down and enter in the IAM User programmatic access keys with permissions to launch EC2 instances and select Add.
+9. Scroll down to select your region using the drop-down, and select Add for the EC2 Key Pair’s Private Key.
+10. From the Jenkins Credentials Provider, select SSH Username with private key as the Kind and set the Username to ec2-user.
+11. Scroll down and select Enter Directly under Private Key, then select Add.
+12. Open the private key pair you created in the creating a key pair step and paste in the contents from "-----BEGIN RSA PRIVATE KEY-----" to "-----END RSA PRIVATE KEY-----". Select Add when completed.
+13. Scroll down to "Test Connection" and ensure it states "Success". Select Save when done
+14. If it is offline then change the threshold of free disk space and free temp space to 
+
+https://www.jenkins.io/doc/tutorials/tutorial-for-installing-jenkins-on-AWS/
