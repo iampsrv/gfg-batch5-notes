@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myfirstpod
+  labels:
+    app: myflaskapp
+spec:
+  containers:
+    - name: myfirstpod
+      image: psrv3/myflaskapp
+      ports:
+        - containerPort: 5001
