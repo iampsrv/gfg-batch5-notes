@@ -1,0 +1,29 @@
+                                    Master Node
+
+sudo apt-get update
+sudo apt install software-properties-common (yes)
+sudo apt-add-repository -y ppa:ansible/ansible
+sudo apt update
+sudo apt install ansible -y
+
+ssh-keygen
+copy id_rsa.pub into slave (/.ssh/authorized_keys)
+
+vi /etc/ansible/hosts
+
+[prod]
+slave1 ansible_ssh_host=18.212.12.236
+
+                                    Slave Node
+sudo apt-get update
+sudo apt update
+sudo apt install python3 -y
+
+------------------------------------------------------------------------
+
+ansible -m ping all
+ansible -m ping prod
+ansible -m ping slave1
+
+ansible -m ping -u ubuntu all	
+ansible -m ping all -i my_inventory.ini
